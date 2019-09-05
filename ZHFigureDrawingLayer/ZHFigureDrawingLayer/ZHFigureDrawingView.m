@@ -19,7 +19,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         self.userInteractionEnabled = YES;
-        self.drawingType = ZHFigureDrawingTypeCosine;
+        self.drawingType = ZHFigureDrawingTypeTriangle;
     }
     return self;
 }
