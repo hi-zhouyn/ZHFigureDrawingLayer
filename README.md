@@ -1,7 +1,7 @@
 # ZHFigureDrawingLayer
 ![ZHFigureDrawingLayer](ZHFigureDrawingLayer/Image/IMG_3989.PNG)
 ## 简介
-ZHFigureDrawingLayer一款图形白版绘制工具，支持支持以下多种数学图形绘制。
+ZHFigureDrawingLayer一款图形白版绘制工具，支持以下多种数学图形绘制。
 
 ```
 typedef enum : NSUInteger {
