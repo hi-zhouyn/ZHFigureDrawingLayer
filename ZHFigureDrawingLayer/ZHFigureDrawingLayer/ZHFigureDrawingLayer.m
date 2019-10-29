@@ -49,6 +49,12 @@
     return self;
 }
 
+- (void)setLineColor:(UIColor *)lineColor
+{
+    _lineColor = lineColor;
+    self.strokeColor = lineColor.CGColor;
+}
+
 + (instancetype)createLayerWithStartPoint:(CGPoint)startPoint type:(ZHFigureDrawingType)type
 {
     ZHFigureDrawingLayer *layer;
@@ -95,10 +101,10 @@
         case ZHFigureDrawingTypeRhombus:
             layer = [[ZHDrawingRhombusLayer alloc] init];
             break;
-        case ZHFigureDrawingTypePentagon:
+        case ZHFigureDrawingTypePentagon://五边形
             layer = [[ZHDrawingPentagonLayer alloc] init];
             break;
-        case ZHFigureDrawingTypeHexagon:
+        case ZHFigureDrawingTypeHexagon://六边形
             layer = [[ZHDrawingHexagonLayer alloc] init];
             break;
         case ZHFigureDrawingTypeAxis:

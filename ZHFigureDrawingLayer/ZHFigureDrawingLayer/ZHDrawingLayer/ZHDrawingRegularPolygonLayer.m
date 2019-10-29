@@ -43,9 +43,7 @@
         }else{
             return;
         }
-        
     }
-    
     self.path = path.CGPath;
     self.endPoint = endPoint;
 }

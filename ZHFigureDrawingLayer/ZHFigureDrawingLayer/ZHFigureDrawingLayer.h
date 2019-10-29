@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 typedef enum : NSUInteger {
-    ZHFigureDrawingTypeGraffiti,            //涂鸦
+    ZHFigureDrawingTypeGraffiti = 1,        //涂鸦
     ZHFigureDrawingTypeArrow,               //单箭头
     ZHFigureDrawingTypeLine,                //直线
     ZHFigureDrawingTypeDottedline,          //虚线
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *pointArray;    //记录图形绘制点
 @property (nonatomic, assign) CGPoint startPoint;            //起始坐标
 @property (nonatomic, assign) CGPoint endPoint;              //终点坐标
-@property (nonatomic, copy) NSString *lineColor;             //画笔颜色
+@property (nonatomic, strong) UIColor *lineColor;             //画笔颜色
 @property (nonatomic, assign) CGSize paintSize;              //画布大小
 
 - (void)movePathWithStartPoint:(CGPoint)startPoint;
