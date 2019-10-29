@@ -40,6 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZHFigureDrawingLayer : CAShapeLayer
 
+/**
+ 初始化
+ @param startPoint      开始点
+ @param type            图形类型
+ */
 + (instancetype)createLayerWithStartPoint:(CGPoint)startPoint type:(ZHFigureDrawingType)type;
 
 @property (nonatomic, assign) ZHFigureDrawingType drawingType;     //图形类型
