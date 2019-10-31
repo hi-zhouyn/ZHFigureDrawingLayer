@@ -1,5 +1,7 @@
 # ZHFigureDrawingLayer
 ![ZHFigureDrawingLayer](/Image/IMG_3989.PNG)
+## 文档
+[简书文档](https://www.jianshu.com/p/7ffacc6783a5)
 ## 简介
 ZHFigureDrawingLayer一款图形白版绘制工具，支持以下多种数学图形绘制。
 
