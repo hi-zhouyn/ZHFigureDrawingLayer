@@ -43,12 +43,13 @@ typedef enum : NSUInteger {
  */
 + (instancetype)createLayerWithStartPoint:(CGPoint)startPoint type:(ZHFigureDrawingType)type;
 
-@property (nonatomic, assign) ZHFigureDrawingType drawingType;     //图形类型
-@property (nonatomic, strong) NSMutableArray *pointArray;    //记录图形绘制点
-@property (nonatomic, assign) CGPoint startPoint;            //起始坐标
-@property (nonatomic, assign) CGPoint endPoint;              //终点坐标
-@property (nonatomic, strong) UIColor *lineColor;            //画笔颜色
-@property (nonatomic, assign) CGSize paintSize;              //画布大小
+@property (nonatomic, assign) ZHFigureDrawingType drawingType;   //图形类型
+@property (nonatomic, strong) NSMutableArray *pointArray;        //记录图形绘制点
+@property (nonatomic, assign) CGPoint startPoint;                //起始坐标
+@property (nonatomic, assign) CGPoint endPoint;                  //终点坐标
+@property (nonatomic, strong) UIColor *lineColor;                //画笔颜色（默认黑色）
+@property (nonatomic, assign) CGSize paintSize;                  //画布大小
+@property (nonatomic, assign) CGFloat layerLineWidth;            //线宽（1~20,默认2）
 
 - (void)movePathWithStartPoint:(CGPoint)startPoint;
 - (void)movePathWithEndPoint:(CGPoint)endPoint;
@@ -59,4 +60,5 @@ typedef enum : NSUInteger {
 - (CGFloat)angleEndWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 ```
 ## 更新记录
+2019-12-09 增加线宽设置（1~20,默认2）
 2019-12-02 增加撤销、还原、删除还原功能
