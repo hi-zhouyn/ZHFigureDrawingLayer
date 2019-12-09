@@ -47,12 +47,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)createLayerWithStartPoint:(CGPoint)startPoint type:(ZHFigureDrawingType)type;
 
-@property (nonatomic, assign) ZHFigureDrawingType drawingType;     //图形类型
-@property (nonatomic, strong) NSMutableArray *pointArray;    //记录图形绘制点
-@property (nonatomic, assign) CGPoint startPoint;            //起始坐标
-@property (nonatomic, assign) CGPoint endPoint;              //终点坐标
-@property (nonatomic, strong) UIColor *lineColor;            //画笔颜色
-@property (nonatomic, assign) CGSize paintSize;              //画布大小
+@property (nonatomic, assign) ZHFigureDrawingType drawingType;   //图形类型
+@property (nonatomic, strong) NSMutableArray *pointArray;        //记录图形绘制点
+@property (nonatomic, assign) CGPoint startPoint;                //起始坐标
+@property (nonatomic, assign) CGPoint endPoint;                  //终点坐标
+@property (nonatomic, strong) UIColor *lineColor;                //画笔颜色（默认黑色）
+@property (nonatomic, assign) CGSize paintSize;                  //画布大小
+@property (nonatomic, assign) CGFloat layerLineWidth;            //线宽（1~20,默认2）
 
 - (void)movePathWithStartPoint:(CGPoint)startPoint;
 - (void)movePathWithEndPoint:(CGPoint)endPoint;

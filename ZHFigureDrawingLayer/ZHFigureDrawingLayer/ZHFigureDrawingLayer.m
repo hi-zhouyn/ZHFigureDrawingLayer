@@ -43,7 +43,6 @@
         self.strokeColor = [UIColor blackColor].CGColor;
         self.fillColor = [UIColor clearColor].CGColor;
         self.lineWidth = 2;
-//        self.isSelected = NO;
         self.pointArray = [NSMutableArray array];
     }
     return self;
@@ -53,6 +52,17 @@
 {
     _lineColor = lineColor;
     self.strokeColor = lineColor.CGColor;
+}
+
+- (void)setLayerLineWidth:(CGFloat)layerLineWidth
+{
+    if (layerLineWidth <= 1) {
+        layerLineWidth = 1;
+    } else if (layerLineWidth >= 20) {
+        layerLineWidth = 20;
+    }
+    _layerLineWidth = layerLineWidth;
+    self.lineWidth = layerLineWidth;
 }
 
 + (instancetype)createLayerWithStartPoint:(CGPoint)startPoint type:(ZHFigureDrawingType)type

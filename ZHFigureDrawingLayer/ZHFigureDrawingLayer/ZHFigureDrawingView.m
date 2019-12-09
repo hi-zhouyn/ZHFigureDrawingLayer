@@ -60,6 +60,7 @@
         self.drawingLayer.paintSize = self.frame.size;
         self.drawingLayer.drawingType = self.drawingType;
         self.drawingLayer.lineColor = self.lineColor;
+//        self.drawingLayer.layerLineWidth = 4.f;
         [self.layer addSublayer:self.drawingLayer];
     }else {
         [self.drawingLayer movePathWithEndPoint:currentPoint];
