@@ -58,3 +58,5 @@ typedef enum : NSUInteger {
 - (CGFloat)angleWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 - (CGFloat)angleEndWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 ```
+## 更新记录
+2019-12-02 增加撤销、还原、删除还原功能
