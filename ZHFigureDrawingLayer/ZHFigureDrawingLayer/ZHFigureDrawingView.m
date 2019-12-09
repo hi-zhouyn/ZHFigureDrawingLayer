@@ -141,6 +141,9 @@
 //清除所有
 - (void)removeAllLayerDrawing
 {
+    if (!self.layerArr.count) {
+        return;
+    }
     for (ZHFigureDrawingLayer *drawingLayer in self.layerArr) {
         [self.removeLayerArr addObject:drawingLayer];
         [drawingLayer removeFromSuperlayer];
