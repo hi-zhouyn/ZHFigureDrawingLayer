@@ -60,5 +60,5 @@ typedef enum : NSUInteger {
 - (CGFloat)angleEndWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 ```
 ## 更新记录
-2019-12-09 增加线宽设置（1~20,默认2）
-2019-12-02 增加撤销、还原、删除还原功能
+* 2019-12-09 增加线宽设置（layerLineWidth，1~20,默认2）
+* 2019-12-02 增加撤销、还原、删除还原功能
