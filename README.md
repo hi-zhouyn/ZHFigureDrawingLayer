@@ -1,6 +1,5 @@
 # ZHFigureDrawingLayer
 ![ZHFigureDrawingLayer](/Image/IMG_3989.PNG)
-![ZHFigureDrawingLayer](/Image/new gif.gif)
 ## 文档
 [简书文档](https://www.jianshu.com/p/5d9df9cc1a4d)
 ## 简介
