@@ -3,7 +3,7 @@
 ## 文档
 [简书文档](https://www.jianshu.com/p/5d9df9cc1a4d)
 ## 简介
-ZHFigureDrawingLayer一款图形白版绘制工具，支持以下多种数学图形绘制。新增支持撤销、还原、删除还原功能。
+ZHFigureDrawingLayer一款图形白版绘制工具，支持以下多种数学图形绘制。支持线条颜色、粗细等基本功能设置，新增支持撤销、还原、删除还原操作等功能。
 
 ```
 typedef enum : NSUInteger {
@@ -59,6 +59,8 @@ typedef enum : NSUInteger {
 - (CGFloat)angleWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 - (CGFloat)angleEndWithFirstPoint:(CGPoint)firstPoint andSecondPoint:(CGPoint)secondPoint;
 ```
+## 意见建议
+如果感觉此项目对你有帮助，欢迎Star！如果使用过程中遇到问题或者有更好的建议,欢迎在Issues提出！
 ## 更新记录
 * 2019-12-09 增加线宽设置（layerLineWidth，1~20,默认2）
 * 2019-12-02 增加撤销、还原、删除还原功能
