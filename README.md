@@ -1,9 +1,10 @@
 # ZHFigureDrawingLayer
+![ZHFigureDrawingLayer](/Image/show.gif)
 ![ZHFigureDrawingLayer](/Image/IMG_3989.PNG)
 ## 文档
 [简书文档](https://www.jianshu.com/p/5d9df9cc1a4d)
 ## 简介
-ZHFigureDrawingLayer一款图形白版绘制工具，支持以下多种数学图形绘制。支持线条颜色、粗细等基本功能设置，新增支持撤销、还原、删除还原操作等功能。
+ZHFigureDrawingLayer一款图形白板绘制工具，支持以下多种数学图形绘制。支持线条颜色、粗细等基本功能设置，新增支持撤销、还原、删除还原操作等功能。
 
 ```
 typedef enum : NSUInteger {
