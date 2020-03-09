@@ -1,10 +1,12 @@
 # ZHFigureDrawingLayer
+ZHFigureDrawingLayer一款图形白板绘制工具库，支持常见的24种数学图形绘制。支持线条颜色、粗细等基本功能设置，新增支持撤销、还原、删除还原操作等功能！
+## 预览
 ![ZHFigureDrawingLayer](/Image/show.gif)
 ![ZHFigureDrawingLayer](/Image/IMG_3989.PNG)
 ## 文档
 [简书文档](https://www.jianshu.com/p/5d9df9cc1a4d)
 ## 简介
-ZHFigureDrawingLayer一款图形白板绘制工具，支持以下多种数学图形绘制。支持线条颜色、粗细等基本功能设置，新增支持撤销、还原、删除还原操作等功能。
+ZHFigureDrawingLayer支持以下图形，并通过简单的工厂模式，降低耦合，支持快速进行图形新增及修改。白版绘制功能记录手指的开始点和手指一直移动的结束点，中间通过需要实现的图形进行一个关键点计算，以此来进行一个图形绘制，实现一个完整的白版绘制工具库。
 
 ```
 typedef enum : NSUInteger {
