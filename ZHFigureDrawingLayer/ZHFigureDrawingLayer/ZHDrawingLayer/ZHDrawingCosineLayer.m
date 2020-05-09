@@ -20,7 +20,7 @@
     CGFloat width = endPoint.x - self.startPoint.x;
     [path moveToPoint:self.startPoint];
     
-    for(float x = 0.0; x < fabs(endPoint.x - self.startPoint.x); x++)
+    for (float x = 0.0; x < fabs(endPoint.x - self.startPoint.x); x++)
     {
         float startX;
         if (width > 0) {
@@ -30,6 +30,11 @@
         }
         float yCosine = sin(x / 50 * M_PI) * height + self.startPoint.y;
         CGPoint cosinePoint = CGPointMake(startX + self.startPoint.x, yCosine);
+        //增加边界控制
+        CGRect paintRect = CGRectMake(0, 0, self.paintSize.width, self.paintSize.height);
+        if (!CGRectContainsPoint(paintRect, cosinePoint)){
+            return;
+        }
         [path addLineToPoint:cosinePoint];
     }
     

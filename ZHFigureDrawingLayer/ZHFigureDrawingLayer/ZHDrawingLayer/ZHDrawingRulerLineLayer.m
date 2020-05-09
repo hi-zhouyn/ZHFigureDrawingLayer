@@ -32,6 +32,14 @@
     angle = [self angleEndWithFirstPoint:self.startPoint andSecondPoint:endPoint];
     CGPoint point1 = CGPointMake(endPoint.x+10*sin(angle), endPoint.y+10*cos(angle));
     CGPoint point2 = CGPointMake(endPoint.x-10*sin(angle), endPoint.y-10*cos(angle));
+    
+    //增加边界控制
+    CGRect paintRect = CGRectMake(0, 0, self.paintSize.width, self.paintSize.height);
+    if (!CGRectContainsPoint(paintRect, point1)
+        || !CGRectContainsPoint(paintRect, point2)){
+        return;
+    }
+    
     [path addLineToPoint:point1];
     [path addLineToPoint:point2];
     CGPoint point3 = CGPointMake(point1.x-(endPoint.x-self.startPoint.x), point1.y-(endPoint.y-self.startPoint.y));

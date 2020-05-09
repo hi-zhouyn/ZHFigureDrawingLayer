@@ -53,7 +53,7 @@
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithCGPath:pathRef];
     
     [path appendPath:bezierPath];
-    
+    CGPathRelease(pathRef);
     self.path = path.CGPath;
 }
 

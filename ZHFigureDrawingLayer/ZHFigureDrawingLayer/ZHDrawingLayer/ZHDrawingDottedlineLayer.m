@@ -26,6 +26,7 @@
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithCGPath:path];
     
     self.path = bezierPath.CGPath;
+    CGPathRelease(path);
 }
 
 @end

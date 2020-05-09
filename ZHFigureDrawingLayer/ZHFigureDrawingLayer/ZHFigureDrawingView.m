@@ -70,7 +70,7 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event
 {
-    if (self.drawingLayer) {
+    if (self.drawingLayer && !self.isFirstTouch) {
         [self.layerArr addObject:self.drawingLayer];
         [self.previousLayerArr removeAllObjects];
         [self setButtonCanTouch:0 enable:NO];
@@ -116,7 +116,7 @@
     [self.layerArr addObject:drawingLayer];
     [self.layer addSublayer:drawingLayer];
     [self.previousLayerArr removeObject:drawingLayer];
-    [self setButtonCanTouch:0 enable:self.self.previousLayerArr.count];
+    [self setButtonCanTouch:0 enable:self.self.previousLayerArr.count?YES:NO];
     [self setButtonCanTouch:1 enable:YES];
 }
 
@@ -135,7 +135,7 @@
     [self.layerArr removeObject:drawingLayer];
     [drawingLayer removeFromSuperlayer];
     [self setButtonCanTouch:0 enable:YES];
-    [self setButtonCanTouch:1 enable:self.layerArr.count];
+    [self setButtonCanTouch:1 enable:self.layerArr.count?YES:NO];
 }
 
 //清除所有

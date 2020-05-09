@@ -19,9 +19,22 @@
     
     CGFloat angle = [self angleWithFirstPoint:self.startPoint andSecondPoint:endPoint];
     CGFloat radius = fabs(endPoint.y - self.startPoint.y)/sin(angle);
+    
+    //增加边界控制
+    CGPoint tPoint = CGPointMake(self.startPoint.x, self.startPoint.y - radius);
+    CGPoint lPoint = CGPointMake(self.startPoint.x - radius, self.startPoint.y);
+    CGPoint bPoint = CGPointMake(self.startPoint.x, self.startPoint.y + radius);
+    CGPoint rPoint = CGPointMake(self.startPoint.x + radius, self.startPoint.y);
+    CGRect paintRect = CGRectMake(0, 0, self.paintSize.width, self.paintSize.height);
+    if (!CGRectContainsPoint(paintRect, tPoint)
+        || !CGRectContainsPoint(paintRect, lPoint)
+        || !CGRectContainsPoint(paintRect, bPoint)
+        || !CGRectContainsPoint(paintRect, rPoint)){
+        return;
+    }
+    
     //绘制圆
     [path addArcWithCenter:self.startPoint radius:radius startAngle:0 endAngle:2*M_PI clockwise:YES];
-    
     
     CGRect rectToFill = CGRectMake(self.startPoint.x - radius, self.startPoint.y - radius/3, radius*2, radius/3*2);
     UIBezierPath *ovalPath = [UIBezierPath bezierPathWithOvalInRect:rectToFill];
@@ -39,7 +52,7 @@
     UIBezierPath *bezierPath = [UIBezierPath bezierPathWithCGPath:pathRef];
     
     [path appendPath:bezierPath];
-    
+    CGPathRelease(pathRef);
     self.path = path.CGPath;
     
 }

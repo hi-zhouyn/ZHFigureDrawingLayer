@@ -14,6 +14,17 @@
 -(void)movePathWithEndPoint:(CGPoint)endPoint
 {
     self.endPoint = endPoint;
+    
+    CGFloat angle = [self angleWithFirstPoint:self.startPoint andSecondPoint:endPoint];
+    CGFloat width = fabs(endPoint.x - self.startPoint.x)*7/10 ;
+    CGFloat zx = width + self.startPoint.x;
+    CGFloat zy = self.startPoint.y - width * fabs(tan(angle));
+    //增加边界控制
+    CGRect paintRect = CGRectMake(0, 0, self.paintSize.width, self.paintSize.height);
+    if (!CGRectContainsPoint(paintRect, CGPointMake(zx, zy))){
+        return;
+    }
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
     
     [path moveToPoint:self.startPoint];
@@ -22,10 +33,6 @@
     [path moveToPoint:self.startPoint];
     [path addLineToPoint:CGPointMake(self.startPoint.x, endPoint.y)];
     
-    CGFloat angle = [self angleWithFirstPoint:self.startPoint andSecondPoint:endPoint];
-    CGFloat width = fabs(endPoint.x - self.startPoint.x)*7/10 ;
-    CGFloat zx = width + self.startPoint.x;
-    CGFloat zy = self.startPoint.y - width * fabs(tan(angle));
     [path moveToPoint:self.startPoint];
     [path addLineToPoint:CGPointMake(zx,zy)];
     
